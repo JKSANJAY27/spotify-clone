@@ -22,6 +22,15 @@ import speaker from "./speaker.png";
 import volume from "./volume.png";
 import mini_player from "./mini-player.png";
 import zoom from "./zoom.png";
+import leftarrow from "./left_arrow.png";
+import rightarrow from "./right_arrow.png";
+import img5 from "./img5.jpg";
+import img6 from "./img6.jpg";
+import img7 from "./img7.jpg";
+import img8 from "./img8.jpg";
+import img9 from "./img9.jpg";
+import spotify_logo from "./spotify_logo.png";
+import clock from "./clock_icon.png";
 
 export const assets = {
     home,
@@ -41,6 +50,10 @@ export const assets = {
     volume,
     mini_player,
     zoom,
+    leftarrow,
+    rightarrow,
+    spotify_logo,
+    clock
 }
 
 export const songsData = [
@@ -75,5 +88,43 @@ export const songsData = [
         file: song2,
         desc: "Enchanting rhythms and lush harmonies evoke a sense of wonder.",
         duration: "3:00"
+    },
+]
+
+export const albumsData = [
+    {
+        id:0,
+        name: "Top 50 Global",
+        image: img5,
+        desc: "Your weekly update of the most played tracks",
+        bgColor: "#2a4365"
+    },
+    {
+        id:1,
+        name: "Top 50 India",
+        image: img6,
+        desc: "Your weekly update of the most played tracks",
+        bgColor: "#22543d"
+    },
+    {
+        id:2,
+        name: "Trending Global",
+        image: img7,
+        desc: "Your weekly update of the most played tracks",
+        bgColor: "#2a4365"
+    },
+    {
+        id:3,
+        name: "Mega Hits",
+        image: img8,
+        desc: "Your weekly update of the most played tracks",
+        bgColor: "#2a4365"
+    },
+    {
+        id:4,
+        name: "Happy Favorites",
+        image: img9,
+        desc: "Your weekly update of the most played tracks",
+        bgColor: "#2a4365"
     },
 ]
