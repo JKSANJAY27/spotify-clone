@@ -31,6 +31,7 @@ import img8 from "./img8.jpg";
 import img9 from "./img9.jpg";
 import spotify_logo from "./spotify_logo.png";
 import clock from "./clock_icon.png";
+import pause from "./pause.png";
 
 export const assets = {
     home,
@@ -53,7 +54,8 @@ export const assets = {
     leftarrow,
     rightarrow,
     spotify_logo,
-    clock
+    clock,
+    pause
 }
 
 export const songsData = [
