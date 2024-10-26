@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { assets } from '../assets/assets.js'
 import axios from 'axios';
-import { url } from '../App';
+import { url } from '../App.jsx';
+import { toast } from 'react-toastify';
 
 const AddAlbum = () => {
     const [image,setImage] = useState(false);
@@ -18,7 +19,7 @@ const AddAlbum = () => {
             formData.append('name', name);
             formData.append('desc', desc);
             formData.append('image', image);
-            formData.append('bgColour', colour);
+            formData.append('bgColor', colour);
             const response = await axios.post(`${url}/api/album/add`, formData);
             if (response.data.success){
                 toast.success("Album added");
@@ -27,9 +28,11 @@ const AddAlbum = () => {
                 setName("");
             } else {
                 toast.error("Something went wrong");
+                console.log(response.data);
             }
         } catch (error) {
             toast.error("Error occured");
+            console.log(error);
         }
         setLoading(false);
     }
