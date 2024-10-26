@@ -32,7 +32,7 @@ const PlayerContextProvider = (props)=>{
     }
     const playWithId = async(id)=>{
         await songsData.map((item)=>{
-            if (id == item._id){
+            if (id === item._id){
                 setTrack(item);
             }
         })
