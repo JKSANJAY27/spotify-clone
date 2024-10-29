@@ -3,15 +3,19 @@ import { assets } from '../assets/assets.js'
 import axios from 'axios';
 import { url } from '../App.jsx';
 import { toast } from 'react-toastify';
+import { useContext } from 'react';
+import { AuthContext } from './AuthContext';
 
 const AddAlbum = () => {
-    const [image,setImage] = useState(false);
-    const [colour,setColour] = useState("#121212");
-    const [name,setName] = useState("");
+    const { user } = useContext(AuthContext);
+
+    const [image, setImage] = useState(false);
+    const [colour, setColour] = useState("#121212");
+    const [name, setName] = useState("");
     const [desc, setDesc] = useState("");
     const [loading, setLoading] = useState(false);
 
-    const onSubmitHandler = async(e)=>{
+    const onSubmitHandler = async (e) => {
         e.preventDefault();
         setLoading(true);
         try {
@@ -20,22 +24,27 @@ const AddAlbum = () => {
             formData.append('desc', desc);
             formData.append('image', image);
             formData.append('bgColor', colour);
-            const response = await axios.post(`${url}/api/album/add`, formData);
-            if (response.data.success){
+            formData.append('user', user.id);
+
+            const response = await axios.post(`${url}/api/album/add`, formData, {
+                withCredentials: true,
+            });
+
+            if (response.data.success) {
                 toast.success("Album added");
                 setDesc("");
                 setImage(false);
                 setName("");
             } else {
                 toast.error("Something went wrong");
-                console.log(response.data);
             }
         } catch (error) {
-            toast.error("Error occured");
-            console.log(error);
+            toast.error("Error occurred");
         }
         setLoading(false);
-    }
+    };
+
+    if (!user) return <p>Please log in to add albums.</p>;
 
   return loading ? (
     <div className='grid place-items-center min-h-[80vh]'>

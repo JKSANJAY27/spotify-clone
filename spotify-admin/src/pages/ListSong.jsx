@@ -6,7 +6,7 @@ const ListSong = () => {
     const [data,setData] = useState([]);
     const fetchSongs = async()=>{
         try {
-            const response = await axios.get(`${url}/api/song/list`);
+            const response = await axios.get(`${url}/api/song/list`, { withCredentials: true });
             if (response.data.success){
                 setData(response.data.songs);
             }

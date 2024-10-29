@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { assets } from '../assets/assets'
 import { useNavigate } from 'react-router-dom'
+import { AuthContext } from '../context/authContext'
 
 const Navbar = () => {
     const navigate = useNavigate()
+    const { logout } = useContext(AuthContext);
   return (
     <>
         <div className='w-full flex justify-between items-center font-semibold'>
@@ -22,6 +24,12 @@ const Navbar = () => {
             <p className='bg-black px-4 py-1 rounded-2xl cursor-pointer'>Music</p>
             <p className='bg-black px-4 py-1 rounded-2xl cursor-pointer'>Podcast</p>
         </div>
+        <button 
+                onClick={logout}
+                className="ml-4 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
+            >
+                Logout
+        </button>
     </>
   )
 }

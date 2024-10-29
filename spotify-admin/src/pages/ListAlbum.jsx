@@ -6,7 +6,7 @@ const ListAlbum = () => {
     const [data,setData] = useState([]);
     const fetchAlbums = async()=>{
         try {
-            const response = await axios.get(`${url}/api/album/list`);
+            const response = await axios.get(`${url}/api/album/list`, { withCredentials: true });
             if (response.data.success){
                 setData(response.data.albums);
             }
