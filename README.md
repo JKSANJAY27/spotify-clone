@@ -5,7 +5,7 @@
 
 **Key Features Added**:
 
-Google Authentication
-Adding/Removing new Songs/Albums
-Songs could be played, paused, moving next/previous, moving the song bar to particular timeline
-The background of an Album can be modified by the user
+* Google Authentication
+* Adding/Removing new Songs/Albums
+* Songs could be played, paused, moving next/previous, moving the song bar to particular timeline
+* The background of an Album can be modified by the user
